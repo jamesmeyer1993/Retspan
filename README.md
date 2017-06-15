@@ -11,5 +11,6 @@ Option 1:
 
 Option 2 (command line):
 - $ git clone https://github.com/jmeyer1993/Retspan
-- $ cd Retspan && chmod +x install.sh
+- $ cd Retspan 
+- $ chmod +x install.sh
 - $ sudo ./install.sh
