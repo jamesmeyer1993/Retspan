@@ -13,7 +13,9 @@ sudo apt-get install lltag
 
 # mov retspan to /bin
 
-sudo mv $pwd/bin/retspan /bin
+DIR=$(echo $pwd)
+
+sudo mv DIR/bin/retspan /bin
 sudo chmod +x /bin/retspan
 
 echo "Installation Complete!"
