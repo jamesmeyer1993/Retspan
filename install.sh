@@ -13,7 +13,7 @@ sudo apt-get install lltag
 
 # mov retspan to /bin
 
-DIR=$(echo $pwd)
+DIR=$(pwd)
 
 sudo mv $DIR/bin/retspan /bin
 sudo chmod +x /bin/retspan
