@@ -4,7 +4,7 @@
 
 # python pip
 
-sudo apt-get install pip
+sudo apt-get install python-pip
 sudo pip install --upgrade youtube-dl
 
 # lltag
