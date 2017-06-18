@@ -10,7 +10,7 @@ Option 1:
 - $ sudo ./install.sh
 
 Option 2 (command line):
-- $ git clone https://github.com/jmeyer1993/Retspan
+- $ git clone https://github.com/unawarecitizen/Retspan
 - $ cd Retspan 
 - $ chmod +x install.sh
 - $ sudo ./install.sh
