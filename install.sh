@@ -7,6 +7,10 @@
 sudo apt-get install python-pip
 sudo pip install --upgrade youtube-dl
 
+# vorbis-tools
+
+sudo apt-get install vorbis-tools
+
 # lltag
 
 sudo apt-get install lltag
