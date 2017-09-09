@@ -1,5 +1,5 @@
 # Retspan
-A program that compines webscraping tools with file taggers to automate collection and organization of audio files.
+A program that combines webscraping tools with file taggers to automate collection and organization of audio files.
 
 # Installation (Linux: Ubuntu, Mint, Debian)
 Option 1:
