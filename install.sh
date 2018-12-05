@@ -1,25 +1,25 @@
 # install.sh - full installation of dependencies
 #
-# TODO: check for installed files so we can avoid this
+# DEPRECIATED SCRIPT
 
 # python pip
 
-sudo apt-get install python-pip
-sudo pip install --upgrade youtube-dl
+apt-get install python-pip
+pip install --upgrade youtube-dl
 
 # vorbis-tools
 
-sudo apt-get install vorbis-tools
+apt-get install vorbis-tools
 
 # lltag
 
-sudo apt-get install lltag
+apt-get install lltag
 
 # mov retspan to /bin
 
 DIR=$(pwd)
 
-sudo mv $DIR/bin/retspan /bin
-sudo chmod +x /bin/retspan
+cp -v "${DIR}/bin/retspan" "/bin"
+chmod +x "/bin/retspan"
 
 echo "Installation Complete!"
