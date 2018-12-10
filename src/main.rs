@@ -15,12 +15,12 @@ impl Download {
         let dl = Download {
             url: String::with_capacity(128),
             playlist: false,
-            titles: vec![String::with_capacity(32)],
+            titles: Vec::with_capacity(16),
             artist: String::with_capacity(32),
             album: String::with_capacity(32),
             genre: String::with_capacity(32),
             year: 0,
-            formats: vec![String::with_capacity(4)],
+            formats: Vec::with_capacity(5), // there are only 5 formats available
         };
         return dl;
     }
@@ -47,8 +47,8 @@ impl Download {
     }
 
     pub fn get_url(&self) -> Option<String> {
-        if !self.url.isEmpty() {
-            return Some(self.url);
+        if !self.url.is_empty() {
+            return Some(self.url.to_owned());
         } else {
             return None;
         }
@@ -56,7 +56,7 @@ impl Download {
 
     // TODO: this function should belong to a different module
     fn is_valid_playlist(url: &String) -> bool{
-
+        return false;
     }
 
     pub fn set_playlist(&mut self, pl: bool){
@@ -64,7 +64,7 @@ impl Download {
             Some(url) => {
 
             }
-            None => panic!("Downloader: no url assigned.");
+            None => panic!("Downloader: no url assigned."),
         }
     }
 
@@ -73,8 +73,24 @@ impl Download {
         //self.title.push_str(title);
     }
 
-    pub fn add_format(&mut self, format: &str){
-        // TODO: add formats to vector
+    pub fn add_format(&mut self, input_format: &str){
+
+        let formats = vec!["mp3","wav","ogg","opus","flac"];
+
+        {
+            let mut found = false;
+            for format in formats.iter() {
+                if input_format == format.to_owned() {
+                    found = true;
+                    break;
+                }
+            }
+            if !found {
+                panic!("Input format of {} does not exist.", input_format);
+            }
+        }
+
+        self.formats.push(input_format.to_string());
     }
 
     pub fn set_artist(&mut self, artist: &str){
@@ -109,4 +125,10 @@ fn main() {
             println!("Download: invalid url!");
         }
     }
+
+    dl.add_format("mp3");
+    dl.add_format("ogg");
+    dl.add_format("flac");
+    dl.add_format("wav");
+    dl.add_format("opus");
 }
